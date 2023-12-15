@@ -23,7 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 try:
-    from .secrets import SECRET_KEY
+    from whatodo import secrets
+    SECRET_KEY = secrets.SECRET_KEY
 except ImportError:
     SECRET_KEY = "fallback_secret_key"
 
