@@ -1,12 +1,189 @@
 <!-- myapp/templates/home.html -->
 
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Django App - Home</title>
-  </head>
-  <body>
-    <h1>Welcome to My Django App!</h1>
-    <p>This is the home page.</p>
-  </body>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatToDo</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'style.css' %}" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body onload="showTaskSection()">
+    <h1 class="title is-2 has-text-primary ml-2 mt-2">What To Do?</h1>
+    <div class="dropdown-container">
+        <div id="tododropdown" class="dropdown is-active">
+            <label for="listSelector" class="has-text-weight-semibold">Select ToDo List:</label>
+            <div id="dropbutton" class="select is-small">
+                <select id="listSelector" onchange="showTaskSection()" class="button is-primary has-text-weight-semibold">
+                    <option value="todotoday" selected>ToDo ToDay</option>
+                    <option value="todotomorrow">ToDo Tomorrow</option>
+                    <option value="todothisweek">To this Week</option>
+                    <option value="todooneweek">ToDo (within 7 days)</option>
+                    <option value="todothismonth">ToDo this Month</option>
+                    <option value="todoonemonth">ToDo (within 30 days)</option>
+                    <option value="todotwomonth">ToDo (within 60 days)</option>
+                    <option value="todosixmonth">ToDo (next 6 months)</option>
+                    <option value="todothisyear">ToDo 2023</option>
+                    <option value="todonextyear">ToDo 2024</option>
+                    <option value="todoanytime">ToDo Anytime</option>
+                </select>
+                <span class="icon is-small is-right">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <section id="todotoday" class="task-section">
+        <h3 class="title is-4 has-text-success">ToDo Today</h3>
+        <ul>
+            <li>Exercise for 30 minutes (200 points)</li>
+            <li>Read a chapter of a book (100 points)</li>
+            <li>Complete a portfolio project (400 points)</li>
+        </ul>
+    </section>
+
+	<section id="todotomorrow" class="task-section">
+		<h3 class="title is-4">ToDo Tomorrow</h3>
+        <ul>
+            <li>Plan and outline a new project (250 points)</li>
+            <li>Take a 20-minute mindfulness break (50 points)</li>
+            <li>Reach out to a friend or family member (30 points)</li>
+        </ul>
+    </section>
+
+	<section id="todothisweek" class="task-section">
+		<h3 class="title is-4">ToDo this Week</h3>
+        <ul>
+            <li>Attend a networking event (150 points)</li>
+            <li>Learn a new skill or tool (300 points)</li>
+            <li>Organize and clean your workspace (50 points)</li>
+        </ul>
+    </section>
+
+	<section id="todooneweek" class="task-section">
+		<h3 class="title is-4">ToDo (within 7 days)</h3>
+        <ul>
+            <li>example todo 1</li>
+            <li>example todo 2</li>
+            <li>example todo 3</li>
+        </ul>
+    </section>
+
+	<section id="todothismonth" class="task-section">
+		<h3 class="title is-4">ToDo this Month</h3>
+        <ul>
+            <li>example todo 1</li>
+            <li>example todo 2</li>
+            <li>example todo 3</li>
+        </ul>
+    </section>
+
+    <section id="todoonemonth" class="task-section">
+		<h3 class="title is-4">ToDo (within 30 days)</h3>
+        <ul>
+            <li>example todo 1</li>
+            <li>example todo 2</li>
+            <li>example todo 3</li>
+        </ul>
+    </section>
+
+	<section id="todotwomonth" class="task-section">
+		<h3 class="title is-4">ToDo (within 60 days)</h3>
+        <ul>
+            <li>example todo 1</li>
+            <li>example todo 2</li>
+            <li>example todo 3</li>
+        </ul>
+    </section>
+
+	<section id="todosixmonth" class="task-section">
+		<h3 class="title is-4">ToDo (next 6 months)</h3>
+        <ul>
+            <li>example todo 1</li>
+            <li>example todo 2</li>
+            <li>example todo 3</li>
+        </ul>
+    </section>
+
+	<section id="todothisyear" class="task-section">
+		<h3 class="title is-4">ToDo 2023</h3>
+        <ul>
+            <li>example todo 1</li>
+            <li>example todo 2</li>
+            <li>example todo 3</li>
+        </ul>
+    </section>
+
+	<section id="todonextyear" class="task-section">
+		<h3 class="title is-4">ToDo 2024</h3>
+        <ul>
+            <li>example todo 1</li>
+            <li>example todo 2</li>
+            <li>example todo 3</li>
+        </ul>
+    </section>
+
+	<section id="todoanytime" class="task-section">
+		<h3 class="title is-4">ToDo Anytime</h3>
+        <ul>
+            <li>example todo 1</li>
+            <li>example todo 2</li>
+            <li>example todo 3</li>
+        </ul>
+    </section>
+
+	<script>
+        function showTaskSection() {
+            // Hide all task sections
+            document.querySelectorAll('.task-section').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Show the selected task section
+            const selectedValue = document.getElementById('listSelector').value;
+            const selectedSection = document.getElementById(selectedValue);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+        }
+    </script>
+
+    <section id="todonts" class="dontsrewards">
+        <h3 class="title is-4 has-text-danger">To-Dont's</h3>
+        <ul>
+            <li>Skip daily dog walk (-200 points)</li>
+            <li>1 hr + social media use (-150 points)</li>
+            <li>Alcohol on a weekday (-150 points)</li>
+        </ul>
+    </section>
+
+    <section id="rewardstore" class="dontsrewards">
+        <h3 class="title is-4 has-text-info">Rewards</h3>
+        <ul>
+            <li>Watch a movie (cost: 200 points)</li>
+            <li>Take a day off and relax (cost: 500 points)</li>
+            <li>Buy a new book (cost: 300 points)</li>
+        </ul>
+    </section>
+
+    <section id="userdata" class="pointsystem">
+		<h4 class="title is-4 has-text-primary">LetHimCook79</h4>
+		<p>Tasks Completed (today): 3</p>
+		<p>Points accrued (today): 150</p>
+		<p>Points accrued (total): 550</p>
+		<section id="donezo">
+			<h4 class="title is-4" id="donezo">DoneZo: </h4>
+			<ul id="donezo">
+				<li>Finished coding a feature  ( +50 )</li>
+				<li>Cooked a healthy meal  ( +50 )</li>
+				<li>Put the laundry away  ( +50 )</li>
+			</ul>
+		</section>
+    </section>
+
+</body>
 </html>

@@ -1,0 +1,11 @@
+{% comment %} <!-- your_app/templates/list_tasks.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>List of Tasks</h2>
+  <ul>
+    {% for task in tasks %}
+      <li>{{ task.title }} - {{ task.points }} points - {{ task.targ_comp_date }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %} {% endcomment %}

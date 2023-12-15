@@ -1,0 +1,11 @@
+{% comment %} <!-- myapp/templates/create_task.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Create Task</h2>
+  <form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create Task</button>
+  </form>
+{% endblock %} {% endcomment %}

@@ -1,0 +1,44 @@
+/* myapp/templates/styles.css */
+
+section.alltasks {
+  border: 2px solid #333;
+  padding: 10px;
+  width: 50%;
+  margin-bottom: 20px;
+  margin-right: 240px;
+}
+
+section#userdata {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 10px;
+  top: 70px;
+  margin-top: 10px;
+  width: 40%;
+  border: 2px solid #333;
+  padding: 10px;
+}
+
+h4#donezo {
+  display: block;
+  border-bottom: 1px solid #333;
+  border-top: 1px solid #333;
+  margin-top: 1rem;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+ul#donezo {
+  list-style-type: circle;
+  padding: 5%;
+}
+
+ul#donezo li {
+  text-decoration: line-through;
+}
+
+.task-section {
+  display: none;
+}

@@ -1,0 +1,102 @@
+/* myapp/templates/styles.css */
+
+section.dontsrewards {
+  width: 50%;
+  padding: 10px;
+  border: 2px solid #333;
+  margin: 10px;
+  margin-top: 0px;
+}
+
+.dontsrewards ul {
+  list-style-type: circle;
+  padding: 5%;
+}
+
+.dontsrewards h3 {
+  padding-left: 5px;
+}
+
+section.task-section {
+  width: 50%;
+  border: 2px solid #333;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 10px;
+  margin-top: 0px;
+}
+
+.task-section ul {
+  list-style-type: circle;
+  padding: 5%;
+}
+
+.task-section h3 {
+  padding-left: 5px;
+}
+
+div.dropdown-container {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  padding: 5px;
+  margin-left: 10px;
+  border-top: 2px solid #333;
+  border-left: 2px solid #333;
+  border-right: 2px solid #333;
+}
+
+div.dropdown-container label {
+  margin-left: 25px;
+  top: 50%;
+}
+
+div.dropdown-container div#dropbutton {
+  left: 30px;
+}
+
+label {
+  margin-right: 1rem;
+}
+
+section#userdata {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 10px;
+  top: 67px;
+  margin-top: 10px;
+  width: 40%;
+  border: 2px solid #333;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#userdata h4 {
+  padding-left: 10px;
+}
+
+#userdata p {
+  padding-left: 10px;
+}
+
+h4#donezo {
+  display: block;
+  border-bottom: 1px solid #333;
+  border-top: 1px solid #333;
+  margin-top: 1rem;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+ul#donezo {
+  list-style-type: circle;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 5%;
+}
+
+ul#donezo li {
+  text-decoration: line-through;
+}
